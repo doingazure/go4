@@ -50,6 +50,8 @@ jobs:
           echo "POST version checkups"
           npm install caniuse-lite@latest
           echo "STEP 10"
+          pwd
+          echo "STEP 15"
           npx caniuse-lite@latest --update-db
           echo "STEP 20"
       - name: Build And Deploy
