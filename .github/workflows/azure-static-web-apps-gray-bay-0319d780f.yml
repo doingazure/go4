@@ -47,6 +47,7 @@ jobs:
           echo "PRE version checkups"
           npx -v
           npm -v
+          node -v
           echo "POST version checkups"
           npm install caniuse-lite@latest
           echo "STEP 10"
@@ -59,6 +60,9 @@ jobs:
           echo "STEP 17"
           echo /home/runner/.npm/_logs/2024-05-12T*-debug-0.log
           echo "STEP 18"
+          tail -junk
+          man tail
+          echo "STEP 19"
           tail /home/runner/.npm/_logs/2024-05-12T*-debug-0.log
           echo "STEP 20"
       - name: Build And Deploy
