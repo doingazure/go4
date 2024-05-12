@@ -42,30 +42,32 @@ jobs:
         with:
           submodules: true
           lfs: false
-      - name: Get Oriented
+      - name: ↪︎ Get Oriented
         run: |
-          echo "↪︎ ⇉ ⇨ pwd = $(pwd)"
+          echo "↪︎ version checkups"
+          echo "pwd:            $(pwd)"
           echo "npx version:    $(npx -v)"
           echo "npm version:    $(npm -v)"
           echo "node version:   $(node -v)"
           echo "Nextjs version: $(npx next -v)"
+          echo "✅ version checkups"
 
-          echo "Check Nextjs telemetry status"
+          echo "↪︎ Nextjs telemetry"
           # Nextjs collects telemetry - just raising awareness
           # npx next telemetry disable
           # npx next telemetry enable
           npx next telemetry status
-          echo "✅ telemetry status"
+          echo "✅ Nextjs telemetry"
 
           # DEBCONF_NOWARNINGS=yes
           # echo "DEBCONF_NOWARNINGS=$DEBCONF_NOWARNINGS"
 
-      - name: Update caniuse-lite db
+      - name: Update browserslist
         run: |
-          echo "Ensure browserslist is up to date"
+          echo "↪︎ browserslist update"
           # npm install caniuse-lite@latest # is this needed?
           npx update-browserslist-db@latest
-          echo "✅ browserslist"
+          echo "✅ browserslist update"
 
       - name: Build And Deploy
         id: builddeploy
