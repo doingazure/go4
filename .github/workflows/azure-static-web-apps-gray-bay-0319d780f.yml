@@ -10,6 +10,17 @@ on:
       - main
 
 jobs:
+  # avoid "Browserslist: caniuse-lite is outdated" warning
+  update_caniuse_db:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Update caniuse-lite db
+        run: |
+          npm install caniuse-lite@latest
+          npx caniuse-lite@latest --update-db
+
   build_and_deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
