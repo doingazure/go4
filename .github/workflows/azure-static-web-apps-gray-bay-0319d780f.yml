@@ -18,6 +18,10 @@ jobs:
       - uses: actions/checkout@v2
       - name: Update caniuse-lite db
         run: |
+          echo "PRE version checkups"
+          npx -v
+          npm -v
+          echo "POST version checkups"
           npm install caniuse-lite@latest
           npx caniuse-lite@latest --update-db
 
