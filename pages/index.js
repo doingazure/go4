@@ -8,18 +8,8 @@ function MyComponent() {
   const myInputRef = useRef();
 
   const handleClick = () => {
-    // invoke REST API
-    let url = 'https://gist.githubusercontent.com/codingoutloud/be2edce7c57e8eee771acd4d15dd77e6/raw/ad4b1b9f2259b11f58a6a04c63c1e86bf27efaf2/foo.json';
-    // url = './HttpTrigger1';
-    // url = './api/HttpTrigger1';
-    // url = './ssldays';
-    // url = './api/ssldays';
-    
-    // url = '/HttpTrigger1';
-    // url = '/api/HttpTrigger1';
-    // url = '/ssldays';
-    // url = '/api/ssldays';
-    
+    const url = `/api/ssldays?name=${myInputRef.current.value}`;
+    console.log(`Let's fetch: ${url}`);
     fetch(url)
       .then((response) => response.json())
       .then((json) => console.log(json));
