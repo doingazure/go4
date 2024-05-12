@@ -64,7 +64,9 @@ jobs:
           # echo "STEP 18"
           # tail --help
           # # man tail
-          # echo "STEP 19"
+          echo "STEP 19"
+          DEBCONF_NOWARNINGS=yes
+          echo "DEBCONF_NOWARNINGS=$DEBCONF_NOWARNINGS"
           # tail -n 100 /home/runner/.npm/_logs/2024-05-12T*-debug-0.log
           echo "STEP 20"
       - name: Build And Deploy
