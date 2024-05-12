@@ -42,7 +42,7 @@ jobs:
         with:
           submodules: true
           lfs: false
-      - name: Get Oriented: Enhance Visibility of Versions and Configurations
+      - name: Make Key Versions and Config Settings Visible
         run: |
           # version and configuration checks
           
