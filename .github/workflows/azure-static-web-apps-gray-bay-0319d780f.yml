@@ -46,6 +46,7 @@ jobs:
         run: |
           echo "↪︎ version checkups"
           echo "⇨ version checkups"
+          echo "▶ version checkups"
           echo "pwd:            $(pwd)"
           echo "npx version:    $(npx -v)"
           echo "npm version:    $(npm -v)"
@@ -53,7 +54,9 @@ jobs:
           echo "Nextjs version: $(npx next -v)"
           echo "✅ version checkups"
 
-          echo "↪︎ Nextjs telemetry"
+          echo "echos... 🌱 🐣 🌅 🏁 ▶️"
+
+          echo "▶️ Nextjs telemetry"
           # Nextjs collects telemetry - just raising awareness
           # npx next telemetry disable
           # npx next telemetry enable
