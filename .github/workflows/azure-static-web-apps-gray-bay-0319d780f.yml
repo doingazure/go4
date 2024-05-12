@@ -45,6 +45,7 @@ jobs:
       - name: ↪︎ Get Oriented
         run: |
           echo "↪︎ version checkups"
+          echo "⇨ version checkups"
           echo "pwd:            $(pwd)"
           echo "npx version:    $(npx -v)"
           echo "npm version:    $(npm -v)"
