@@ -42,36 +42,31 @@ jobs:
         with:
           submodules: true
           lfs: false
-      - name: ↪︎ Get Oriented
+      - name: Get Oriented: Enhance Visibility of Versions and Configurations
         run: |
-          # versions
-          echo "↪︎ version checkups"
-          echo "⇨ version checkups"
-          echo "▶ version checkups"
-          echo "🟢 version checkups"
-          echo "⭕ version checkups"
-          echo "pwd:            $(pwd)"
+          # version and configuration checks
+          
+          echo "⭕ runtime version checks"
+          # echo "pwd:            $(pwd)"
           echo "npx version:    $(npx -v)"
           echo "npm version:    $(npm -v)"
           echo "node version:   $(node -v)"
           echo "Nextjs version: $(npx next -v)"
-          echo "✅ version checkups"
+          echo "✅ version checks"
 
-          echo "echos... 🟢 🌱 🐣 🌅 🏁 ▶️🟢⭕"
-
-          echo "▶️ Nextjs telemetry"
-          # Nextjs collects telemetry - just raising awareness
-          # npx next telemetry disable
-          # npx next telemetry enable
-          npx next telemetry status
-          echo "✅ Nextjs telemetry"
+          echo "⭕ Nextjs telemetry configuration on your usage of Next.js features and plugins"
+          # Nextjs project collects telemetry - just raising awareness
+          # npx next telemetry disable # uncomment to disable
+          # npx next telemetry enable  # uncomment to enable (default)
+          npx next telemetry status # make setting visible
+          echo "✅ Nextjs telemetry config"
 
           # DEBCONF_NOWARNINGS=yes
           # echo "DEBCONF_NOWARNINGS=$DEBCONF_NOWARNINGS"
 
-      - name: Update browserslist
+      - name: Update browserslist Database
         run: |
-          # browserlist
+          # browserlist update
           echo "🟢 browserslist update"
           # npm install caniuse-lite@latest # is this needed?
           npx update-browserslist-db@latest
