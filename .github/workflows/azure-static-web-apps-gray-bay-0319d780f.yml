@@ -63,7 +63,7 @@ jobs:
           tail --help
           # man tail
           echo "STEP 19"
-          tail /home/runner/.npm/_logs/2024-05-12T*-debug-0.log
+          tail -n 100 /home/runner/.npm/_logs/2024-05-12T*-debug-0.log
           echo "STEP 20"
       - name: Build And Deploy
         id: builddeploy
