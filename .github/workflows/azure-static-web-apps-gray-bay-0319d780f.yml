@@ -42,47 +42,35 @@ jobs:
         with:
           submodules: true
           lfs: false
+      - name: Orientation
+
       - name: Update caniuse-lite db
         run: |
-          echo "PRE version checkups"
+          pwd
           echo "npx version: $(npx -v)"
           echo "npm version: $(npm -v)"
           echo "node version: $(node -v)"
-          echo "POST version checkups"
 
-          echo "PRE telemetry config"
+          # Nextjs collects telemetry - just raising awareness
+          # npx next telemetry disable
+          # npx next telemetry enable
           npx next telemetry status
-          npx next telemetry disable
-          npx next telemetry status
-          npx next telemetry enable
-          npx next telemetry status
+
           DEBCONF_NOWARNINGS=yes
           echo "DEBCONF_NOWARNINGS=$DEBCONF_NOWARNINGS"
-          echo "POST telemetry config"
 
+          echo "Ensure browserslist is up to date"
+          npm install caniuse-lite@latest
+          npx update-browserslist-db@latest
+          echo "✅ browserslist"
+
+      - name: Update caniuse-lite db
+        run: |
           echo "PRE caniuse db config"
           npm install caniuse-lite@latest
           npx update-browserslist-db@latest
           echo "POST caniuse db config"
 
-          echo "STEP 10"
-          pwd
-          # dpkg-reconfigure -au
-          echo "STEP 15"
-          # npx caniuse-lite@latest --update-db || true
-          echo "STEP 16"
-          # # cat /home/runner/.npm/_logs/*.log
-          # ls -la /home/runner/.npm/_logs
-          # echo "STEP 17"
-          # echo /home/runner/.npm/_logs/2024-05-12T*-debug-0.log
-          # echo "STEP 18"
-          # tail --help
-          # # man tail
-          echo "STEP 19"
-          # DEBCONF_NOWARNINGS=yes
-          # echo "DEBCONF_NOWARNINGS=$DEBCONF_NOWARNINGS"
-          # tail -n 100 /home/runner/.npm/_logs/2024-05-12T*-debug-0.log
-          echo "STEP 20"
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
