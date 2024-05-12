@@ -54,7 +54,7 @@ jobs:
           echo "Nextjs version: $(npx next -v)"
           echo "✅ version checkups"
 
-          echo "echos... 🌱 🐣 🌅 🏁 ▶️"
+          echo "echos... 🟢 🌱 🐣 🌅 🏁 ▶️"
 
           echo "▶️ Nextjs telemetry"
           # Nextjs collects telemetry - just raising awareness
@@ -68,7 +68,7 @@ jobs:
 
       - name: Update browserslist
         run: |
-          echo "↪︎ browserslist update"
+          echo "🟢 browserslist update"
           # npm install caniuse-lite@latest # is this needed?
           npx update-browserslist-db@latest
           echo "✅ browserslist update"
