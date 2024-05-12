@@ -52,6 +52,7 @@ jobs:
           npm install caniuse-lite@latest
           echo "STEP 10"
           pwd
+          dpkg-reconfigure -au
           echo "STEP 15"
           npx update-browserslist-db@latest
           # npx caniuse-lite@latest --update-db || true
