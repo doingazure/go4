@@ -56,6 +56,7 @@ jobs:
 
           echo "⭕ Nextjs telemetry configuration on your usage of Next.js features and plugins"
           # Nextjs project collects telemetry - just raising awareness
+          # More info: https://nextjs.org/telemetry
           # npx next telemetry disable # uncomment to disable
           # npx next telemetry enable  # uncomment to enable (default)
           npx next telemetry status # make setting visible
