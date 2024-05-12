@@ -52,7 +52,8 @@ jobs:
           echo "STEP 10"
           pwd
           echo "STEP 15"
-          npx caniuse-lite@latest --update-db
+            npx caniuse-lite@latest --update-db || true
+            cat /home/runner/.npm/_logs/*.log
           echo "STEP 20"
       - name: Build And Deploy
         id: builddeploy
