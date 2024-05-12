@@ -44,9 +44,12 @@ jobs:
           lfs: false
       - name: ↪︎ Get Oriented
         run: |
+          # versions
           echo "↪︎ version checkups"
           echo "⇨ version checkups"
           echo "▶ version checkups"
+          echo "🟢 version checkups"
+          echo "⭕ version checkups"
           echo "pwd:            $(pwd)"
           echo "npx version:    $(npx -v)"
           echo "npm version:    $(npm -v)"
@@ -54,7 +57,7 @@ jobs:
           echo "Nextjs version: $(npx next -v)"
           echo "✅ version checkups"
 
-          echo "echos... 🟢 🌱 🐣 🌅 🏁 ▶️"
+          echo "echos... 🟢 🌱 🐣 🌅 🏁 ▶️🟢⭕"
 
           echo "▶️ Nextjs telemetry"
           # Nextjs collects telemetry - just raising awareness
@@ -68,6 +71,7 @@ jobs:
 
       - name: Update browserslist
         run: |
+          # browserlist
           echo "🟢 browserslist update"
           # npm install caniuse-lite@latest # is this needed?
           npx update-browserslist-db@latest
