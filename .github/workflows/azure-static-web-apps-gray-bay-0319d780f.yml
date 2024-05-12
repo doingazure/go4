@@ -42,10 +42,9 @@ jobs:
         with:
           submodules: true
           lfs: false
-      - name: Make Key Versions and Config Settings Visible
-        run: |
-          # version and configuration checks
-          
+
+      - name: Make Key Versions Visible
+        run: |          
           echo "⭕ displaying versions"
           # echo "pwd:            $(pwd)"
           echo "npx version:    $(npx -v)"
@@ -54,6 +53,8 @@ jobs:
           echo "Nextjs version: $(npx next -v)"
           echo "✅ displayed versions"
 
+      - name: Make Key Config Settings Visible
+        run: |  
           echo "⭕ Configuring Nextjs telemetry"
           # Next.js project collects telemetry configuration on your usage of features and plugins
           # More info: https://nextjs.org/telemetry
